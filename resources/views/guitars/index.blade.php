@@ -5,6 +5,6 @@
     <title></title>
   </head>
   <body>
-    {{dd($guitars)}}
+    {{@var_dump($guitars)}}
   </body>
 </html>
