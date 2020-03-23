@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guitar extends Model
 {
-    //
+    protected $fillable = [
+      'brand',
+      'model',
+      'year',
+      'color',
+      'price',
+      'description'
+    ];
 }
