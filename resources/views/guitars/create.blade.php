@@ -22,7 +22,6 @@
       <input type="text" name="description" placeholder="Descrizione">
       <input type="submit" value="Invia">
       @method('POST')
-
     </form>
   </body>
 </html>

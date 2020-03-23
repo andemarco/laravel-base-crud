@@ -36,7 +36,21 @@ class GuitarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $guitar = new Guitar;
+        $guitar->brand = $data['brand'];
+        $guitar->model = $data['model'];
+        $guitar->year = $data['year'];
+        $guitar->color = $data['color'];
+        $guitar->price = $data['price'];
+        $guitar->description = $data['description'];
+
+        $save = $guitar->save();
+
+        if ($save) {
+          return redirect()->route('guitars.index');
+        }
+
     }
 
     /**
