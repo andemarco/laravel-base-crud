@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+@extends('layouts.layout')
+
+@section('main')
     <form action="{{route('guitars.store')}}" method="post">
       @csrf
 
@@ -23,5 +19,4 @@
       <input type="submit" value="Invia">
       @method('POST')
     </form>
-  </body>
-</html>
+@endsection
