@@ -16,7 +16,7 @@
       <input type="text" name="price" placeholder="Prezzo">
       <label for="content">Descrizione</label>
       <input type="text" name="description" placeholder="Descrizione">
-      <input type="submit" value="Invia">
+      <button type="submit" value="Invia">Inserisci</button>
       @method('POST')
     </form>
 @endsection

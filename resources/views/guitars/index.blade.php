@@ -1,14 +1,16 @@
 @extends('layouts.layout')
 
 @section('main')
+      <div class='boxes'>
     @foreach ($guitars as $guitar)
-      <ul>
-        <li>{{$guitar['brand']}}</li>
-        <li>{{$guitar['model']}}</li>
-        <li>{{$guitar['year']}}</li>
-        <li>{{$guitar['color']}}</li>
-        <li>{{$guitar['price']}}</li>
-        <li>{{$guitar['description']}}</li>
-      </ul>
+
+        <div class="box">
+          <h2>{{$guitar['brand']}} {{$guitar['model']}} {{$guitar['year']}}</h2>
+          <h3>Colore: {{$guitar['color']}}</h3>
+          <h4>Prezzo: €{{$guitar['price']}}</h4>
+          <p>Descrizione prodotto: {{$guitar['description']}}</p>
+        </div>
     @endforeach
+      </div>
+
 @endsection
