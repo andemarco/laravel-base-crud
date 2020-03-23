@@ -10,8 +10,9 @@
       <div class="container">
         <nav class='nav_bar'>
           <ul>
-            <li class='nav_bar_logo'><a href="{{Route('guitars.index')}}">LOGO</a></li>
+            <li class='nav_bar_logo'><a href="http://127.0.0.1:8000/">LOGO</a></li>
             <li class='nav_bar_ins'><a href="{{Route('guitars.create')}}">VENDI LA TUA CHITARRA</a></li>
+            <li class=''><a href="{{Route('guitars.index')}}">LE NOSTRE CHITARRE</a></li>
           </ul>
         </nav>
       </div>

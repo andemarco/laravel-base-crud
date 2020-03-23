@@ -18,8 +18,16 @@
     justify-content: space-between;
     line-height: 85px;
   }
+  .nav_bar_ins {
+    margin-left: auto;
+    margin-right: 20px;
+  }
 }
-
+.jumbo {
+  height: 500px;
+  color: white;
+  background-color: black;
+}
 .boxes {
   display: flex;
   flex-wrap: wrap;
