@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('main')
-    <form action="{{route('guitars.store')}}" method="post">
+    <form action="{{route('guitars.update', $guitar['id'])}}" method="POST">
       @csrf
 
       <label for="title">Marca</label>
@@ -16,7 +16,8 @@
       <input type="text" name="price" placeholder="Prezzo" value="{{$guitar['price']}}">
       <label for="content">Descrizione</label>
       <input type="text" name="description" placeholder="Descrizione" value="{{$guitar['description']}}">
-      <button type="submit" value="Invia">Inserisci</button>
-      @method('POST')
+      <input type="hidden" name="id" value="{{$guitar['id']}}">
+      <button type="submit" value="Invia">Aggiorna</button>
+      @method('PATCH')
     </form>
 @endsection

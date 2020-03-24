@@ -59,7 +59,7 @@ class GuitarController extends Controller
       if(empty($guitar)) {
           abort('404');
       }
-        return view('guitars.edit', compact('guitar'));
+        return view('guitars.show', compact('guitar'));
     }
 
     /**
@@ -85,7 +85,17 @@ class GuitarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $guitar = Guitar::find($id);
+        if(empty($guitar)) {
+            abort('404');
+        }
+        $data = $request->all();
+        $updated = $guitar->update($data);
+
+        if ($updated) {
+          return redirect()->route('guitars.index');
+        }
     }
 
     /**
