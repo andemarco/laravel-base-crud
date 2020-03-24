@@ -38,12 +38,7 @@ class GuitarController extends Controller
     {
         $data = $request->all();
         $guitar = new Guitar;
-        $guitar->brand = $data['brand'];
-        $guitar->model = $data['model'];
-        $guitar->year = $data['year'];
-        $guitar->color = $data['color'];
-        $guitar->price = $data['price'];
-        $guitar->description = $data['description'];
+        $guitar->fill($data);
 
         $save = $guitar->save();
 
@@ -59,9 +54,9 @@ class GuitarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Guitar $guitar)
     {
-        //
+        return view('guitars.show', compact('guitar'));
     }
 
     /**
