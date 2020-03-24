@@ -36,6 +36,10 @@
     background-color: grey;
     margin: 7.5px auto;
     color: white;
+    .delete {
+      float: right;
+      color: red;
+    }
     h2 {
       color: black;
     }

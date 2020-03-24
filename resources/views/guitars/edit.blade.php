@@ -1,0 +1,22 @@
+@extends('layouts.layout')
+
+@section('main')
+    <form action="{{route('guitars.store')}}" method="post">
+      @csrf
+
+      <label for="title">Marca</label>
+      <input type="text" name="brand" placeholder="Marca" value="{{$guitar['brand']}}">
+      <label for="title">Modello</label>
+      <input type="text" name="model" placeholder="Modello" value="{{$guitar['model']}}">
+      <label for="title">Anno</label>
+      <input type="text" name="year" placeholder="Anno" value="{{$guitar['year']}}">
+      <label for="title">Colore</label>
+      <input type="text" name="color" placeholder="Colore" value="{{$guitar['color']}}">
+      <label for="title">Prezzo</label>
+      <input type="text" name="price" placeholder="Prezzo" value="{{$guitar['price']}}">
+      <label for="content">Descrizione</label>
+      <input type="text" name="description" placeholder="Descrizione" value="{{$guitar['description']}}">
+      <button type="submit" value="Invia">Inserisci</button>
+      @method('POST')
+    </form>
+@endsection

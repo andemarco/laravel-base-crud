@@ -44,6 +44,11 @@
   color: white;
 }
 
+.boxes .box .delete {
+  float: right;
+  color: red;
+}
+
 .boxes .box h2 {
   color: black;
 }

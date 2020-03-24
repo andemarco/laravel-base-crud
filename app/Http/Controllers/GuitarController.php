@@ -56,7 +56,10 @@ class GuitarController extends Controller
      */
     public function show(Guitar $guitar)
     {
-        return view('guitars.show', compact('guitar'));
+      if(empty($guitar)) {
+          abort('404');
+      }
+        return view('guitars.edit', compact('guitar'));
     }
 
     /**
@@ -65,9 +68,12 @@ class GuitarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Guitar $guitar)
     {
-        //
+      if(empty($guitar)) {
+          abort('404');
+      }
+        return view('guitars.edit', compact('guitar'));
     }
 
     /**

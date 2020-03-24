@@ -9,6 +9,8 @@
           <h3>Colore: {{$guitar['color']}}</h3>
           <h4>Prezzo: €{{$guitar['price']}}</h4>
           <p>Descrizione prodotto: {{$guitar['description']}}</p>
+          <a class="edit" href="{{route('guitars.update', $guitar['id'])}}">Modifica Articolo</a>
+          <a class="delete" href="#">Elimina articolo</a>
         </div>
     @endforeach
       </div>
