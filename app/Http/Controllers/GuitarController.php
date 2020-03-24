@@ -12,6 +12,16 @@ class GuitarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     private $validationGuitars = [
+       'brand' => 'required|string|max:100',
+       'model' => 'required|string|max:100',
+       'year' => 'required|numeric|min:1900|max:2020',
+       'color' => 'required|string|max:50',
+       'price' => 'required|numeric|min:1|max:9999,99',
+       'description' => 'required|string'
+     ];
+
     public function index()
     {
         $guitars = Guitar::all();
@@ -37,6 +47,7 @@ class GuitarController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $request->validate($this->validationGuitars);
         $guitar = new Guitar;
         $guitar->fill($data);
 
@@ -91,6 +102,7 @@ class GuitarController extends Controller
             abort('404');
         }
         $data = $request->all();
+        $request->validate($this->validationGuitars);
         $updated = $guitar->update($data);
 
         if ($updated) {
